@@ -1,0 +1,1705 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extbook
+\begin_preamble
+
+\usepackage {graphicx}
+\usepackage {longtable}
+\usepackage {indentfirst}
+\renewenvironment{center}{\par\centering}{\par}
+
+% Comentar linhas abaixo se não estiver usando pacote abntex
+% ou se o pacote ainda não foi instalado.
+% neste caso sugere-se usar citações no padrão apalike (lembra o da anbt).
+%\usepackage[alf ,abnt-etal-cite=2 , abnt-year-extra-label=yes , abnt-etal-list=0]{abntcite}
+%\usepackage {helvet}
+%\renewcommand {\familydefault}{\sfdefault}
+
+% Para uso de listagens de código
+\usepackage{color}
+\definecolor{azulclaro}{rgb}{0.6,1,1}%   rgb color model
+% Informa que vai usar o pacote listings, 
+% disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
+\usepackage{listings}
+\end_preamble
+\use_default_options false
+\master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
+\maintain_unincluded_children false
+\language brazilian
+\language_package auto
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style apalike
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 210mm
+\paperheight 297mm
+\leftmargin 30mm
+\topmargin 25mm
+\rightmargin 20mm
+\bottommargin 20mm
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lhead{
+\backslash
+thechapter
+\backslash
+space - Elaboração}  
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Elaboração
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Elaboração
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Elaboração"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Depois da definição dos objetivos, da especificação do software e da montagem
+ dos primeiros diagramas de caso de uso, a equipe de desenvolvimento do
+ projeto de engenharia passa por um processo de elaboração que envolve o
+ estudo de conceitos relacionados ao sistema a ser desenvolvido, a análise
+ de domínio e a identificação de pacotes.
+ 
+\end_layout
+
+\begin_layout Standard
+Na elaboração fazemos uma análise dos requisitos, ajustando os requisitos
+ iniciais de forma a desenvolver um sistema útil, que atenda às necessidades
+ do usuário e, na medida do possível, permita seu reuso e futura extensão.
+\end_layout
+
+\begin_layout Standard
+Eliminam-se os requisitos "impossíveis" e ajusta-se a idéia do sistema de
+ forma que este seja flexível, considerando-se aspectos como custos e prazos.
+\end_layout
+
+\begin_layout Section
+Análise de domínio
+\end_layout
+
+\begin_layout Itemize
+Área relacionada:
+\end_layout
+
+\begin_layout Standard
+A principal área relacionada a este projeto é a engenharia de poço.
+ 
+\end_layout
+
+\begin_layout Itemize
+Sub-área relacionada: 
+\end_layout
+
+\begin_layout Standard
+A perfuração de um poço é fundamental para o desenvolvimento de um campo
+ de petróleo, pois ele é a via de ligação entre a superfície e um alvo geológico.
+ Para que a perfuração ocorra são necessários três parâmetros principais:
+ o torque, a rotação e o peso sobre a broca.
+ Além disso, tem a necessidade de uma sonda, local onde se encontram os
+ equipamentos necessários para este processo, além de toda a equipe envolvida.
+\end_layout
+
+\begin_layout Standard
+Com o método rotativo, a perfuração é realizada com um conjunto de ferramentas
+ e tubos de perfuração que ao final tem uma broca em contato com a formação,
+ responsável por esmerilhar a rocha.
+ Podemos dividir os poços perfurados em três grupos de acordo com suas trajetóri
+as: 
+\end_layout
+
+\begin_layout Itemize
+Verticais com pouca ou nenhuma inclinação em relação a vertical;
+\end_layout
+
+\begin_layout Itemize
+Direcionais, poço no qual possui um inclinação pré-determinada;
+\end_layout
+
+\begin_layout Itemize
+Horizontais com uma inclinação final de 90 graus em relação a vertical.
+ 
+\end_layout
+
+\begin_layout Standard
+Dentro deste contexto, optamos por desenvolver um software que irá calcular
+ a trajetória direcional de um poço em 2D, levando em consideração as profundida
+des medidas e verticais e a inclinação, mantendo o azimute constante durante
+ a trajetória.
+ Um poço direcional tem como vantagem acessar diferentes objetivos em coordenada
+s variadas, economizando assim, tempo de projeto e execução e consequentemente
+ um alto valor de investimento.
+ Além disso, poços direcionais tem a capacidade de aumentarem a produção
+ de um determinado reservatório, pois eles conseguem uma maior área de exposição
+ dentro da zona de óleo.
+ 
+\end_layout
+
+\begin_layout Section
+Formulação teórica - conceitos da perfuração direcional
+\end_layout
+
+\begin_layout Standard
+O objetivo de direcionar uma trajetória na direção correta para acertar
+ um alvo a muitos quilômetros de profundidade forçou a indústria a focar
+ em ferramentas e métodos para identificar a localidade exata do poço e
+ o seu caminho durante a perfuração.
+ Antigamente nos poços exploratórios, era comum alocar a sonda exatamente
+ acima do alvo e perfurar um poço vertical até ele.
+ Com a evolução da indústria e corrida por mais óleo, se tornou necessário
+ perfurar poços para alcançar alvos que eram afastados horizontalmente da
+ localização da sonda na superfície.
+ Hoje em dia, existe diversas empresas que oferecem serviços e ferramentas
+ para desviar o poço e direciona-lo, medindo sua inclinação e azimute durante
+ o processo.
+\end_layout
+
+\begin_layout Subsection
+Aplicações da perfuração direcional
+\end_layout
+
+\begin_layout Standard
+De acordo com a Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Diversasaplicações"
+
+\end_inset
+
+, apresenta-se diferentes razões pelas quais a perfuração direcional se
+ faz necessária: 
+\end_layout
+
+\begin_layout Enumerate
+Poços direcionais em áreas de domos salinos;
+\end_layout
+
+\begin_layout Enumerate
+Poços direcionais em zonas fraturadas; 
+\end_layout
+
+\begin_layout Enumerate
+Poços multilaterais e horizontais; 
+\end_layout
+
+\begin_layout Enumerate
+
+\shape italic
+Sidetrack
+\shape default
+ - desvio a partir de um poço já perfurado;
+\end_layout
+
+\begin_layout Enumerate
+Poços direcionais em áreas que geologicamente, não possibilitem um poço
+ vertical;
+\end_layout
+
+\begin_layout Enumerate
+Poços direcionais para a exploração de uma reserva mais rasa; 
+\end_layout
+
+\begin_layout Enumerate
+Poços direcionais para o controle de um blowout; 
+\end_layout
+
+\begin_layout Enumerate
+Direcionais em áreas urbanas e de proteção ambiental.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../imagens/aplicacoes_direcional.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diversas aplicações de poços direcionais utilizadas na indústria de petróleo
+ (Bourgoyne et al., 1991)
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Diversasaplicações"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Definições e terminologias
+\end_layout
+
+\begin_layout Standard
+Durante o desenvolvimento de um projeto de poço, nos deparamos com diversos
+ termos que devem ser bem definidos para evitar qualquer incompatibilidade
+ de projeto.
+ A terminologia a seguir é utilizada:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Afastamento
+\series default
+: termo utilizado para expressar a distância horizontal da cabeça do poço
+ com um alvo pré-determinado.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Profundidade Vertical:
+\series default
+ representa a distância vertical da mesa rotativa a um ponto do poço;
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Profundidade Medida:
+\series default
+ é a distância percorrida pela broca até atingir determinado ponto do poço;
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Objetivo:
+\series default
+ é o ponto que a trajetória deve atingir.
+ É determinado com o auxílio de geólogos e engenheiros de reservatório;
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Alvo:
+\series default
+ já o alvo representa uma área, onde se encontra o objetivo, mais um raio
+ de tolerância caso ocorra algum desvio da trajetória planejada; 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Inclinação:
+\series default
+ a inclinação é definida como sendo o ângulo entre o vetor local gravitacional
+ e a tangente ao eixo do poço; 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Azimute:
+\series default
+ indica a direção do poço, variando de 0 a 360 graus medindo-se no sentido
+ horário a partir do norte geográfico; 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../imagens/DirectionalDrillingDefinitions.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Parâmetros medidos de um poço direcional (modificado de Gabolde e Nguyen,
+ 1991)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\shape italic
+KOP – Kickoff Point
+\shape default
+:
+\series default
+ é o começo da seção de ganho de ângulo máximo do trecho reto: representa
+ o ângulo máximo ao final da seção de ganho de ângulo, no qual é mantido
+ constante no trecho reto; 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\shape italic
+Buildup
+\shape default
+, 
+\shape italic
+Buildup Rate
+\shape default
+ e 
+\shape italic
+End-of-buildup
+\shape default
+:
+\series default
+ 
+\shape italic
+buildup
+\shape default
+ é a seção onde acontece o ganho de ângulo, na qual a inclinação varia com
+ a profundidade.
+ Normalmente esse ganho ocorre a uma taxa de ganho de ângulo constante,
+ na qual chamamos de 
+\shape italic
+Buildup Rate (BUR)
+\shape default
+, expressa em graus/30 metros.
+ O final do trecho de ganho de ângulo que precede o trecho reto é chamado
+ de 
+\shape italic
+End-of-build
+\shape default
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Início do 
+\shape italic
+Drop off
+\shape default
+ e Seção de 
+\shape italic
+Drop off
+\shape default
+:
+\series default
+ é a profundidade onde o poço começa a perder ângulo.
+ O trecho do poço onde ocorre esta perda de ângulo é conhecido como seção
+ de 
+\shape italic
+drop off
+\shape default
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Seção Tangente ou 
+\shape italic
+Slant
+\series default
+\shape default
+: é o trecho onde a inclinação é mantida até atingir o objetivo ou uma nova
+ seção de ganho ou perda de ângulo 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\shape italic
+Dogleg
+\shape default
+ e 
+\shape italic
+Dogleg Severity (DLS)
+\shape default
+:
+\series default
+ 
+\shape italic
+dogleg
+\shape default
+ é o ângulo no espaço formado por dois vetores tangentes à trajetória.
+ Já o 
+\shape italic
+dogleg severity
+\shape default
+ refere-se ao ângulo dividido pelo comprimento perfurado ou a ser perfurado.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Raio de curvatura (R)
+\series default
+: é o raio dos arcos de circunferência usados nos cálculos dos trechos de
+ 
+\shape italic
+buildup
+\shape default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../imagens/DirectionalDefinitions.png
+	scale 85
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Definições direcionais de um poço (Rocha, L.A et al., 2008)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Classificação de poços direcionais
+\end_layout
+
+\begin_layout Standard
+Esta classificação tem o objetivo de identificar o grau de severidade de
+ cada poço direcional.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Classificação quanto ao raio de curvatura:
+\end_layout
+
+\begin_layout Standard
+Os poços podem ser classificados como sendo de raio curto, intermediário,
+ médio e longo.
+ Como a variação da inclinação é considerada constante ao longo do trecho
+ de 
+\shape italic
+buildup
+\shape default
+ do poço, o resultado é um arco de círculo com um determinado raio de curvatura.
+ Tal parâmetro pode ser calculado pela seguinte expressão: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+R=\frac{180}{\pi}*\frac{1}{q}\label{eq:RaioDeCurvatura}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Classificação da trajetória quanto ao raio de curvatura.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Classificação
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BUR (º/30m)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Raio (m)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Raio longo 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2 - 8 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+859 - 215 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Raio médio
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8 - 30 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+215 - 57 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Raio intermediário 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+30 - 60 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+57 - 29 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Raio curto
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+60 - 200 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+29 - 9 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Classificação quanto ao afastamento do objetivo:
+\end_layout
+
+\begin_layout Standard
+Os poços podem ser classificados em convencional, de grande afastamento
+ (
+\shape italic
+ERW – extended reach well
+\shape default
+) e de afastamento severo (
+\shape italic
+S-ERW – severe extended reach well
+\shape default
+).
+ Os dados utilizados nesta classificação são: afastamento, profundidade
+ vertical (PV) e lâmina d’água (LA) para poços marítimos.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Classificação da trajetória quanto ao raio de curvatura.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tipo de poço
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Afastamento / (PV-LA)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Convencional 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+< 2 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ERW 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2 - 3 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+S-ERW 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+> 3 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Classificação quanto ao giro:
+\end_layout
+
+\begin_layout Standard
+Os poços são classificados em bidimensional (2D) ou tridimensional (3D).
+ Estes são também conhecidos como poço de projetista ou 
+\shape italic
+designer wells
+\shape default
+.
+ 
+\end_layout
+
+\begin_layout Subsection
+Planejamento da trajetória de um poço
+\end_layout
+
+\begin_layout Standard
+A elaboração da trajetória de um poço com uma inclinação específica deve
+ ser escolhida de modo que satisfaça da melhor maneira possível as condições
+ de viabilidade econômica de acordo com a sonda, de modo que o custo seja
+ minimizado.
+ Durante o planejamento e a perfuração do poço a posição de todos os pontos
+ ao longo da trajetória é considerada em três dimensões.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../imagens/DirectionalDrillingWellDisplacement.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Coordenadas de referência para planejamento de um poço.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Tipos de poços direcionais e classificação
+\end_layout
+
+\begin_layout Standard
+Uma vez fixadas as coordenadas da locação da cabeça do poço, e as coordenadas
+ do alvo geológico, escolhe-se o modelo da trajetória do poço.
+ Os principais tipos de poços direcionais são: 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Tipo 1 (
+\shape italic
+Build and hold
+\shape default
+):
+\series default
+ o poço é vertical até o KOP onde o inicia-se o ganho de ângulo.
+ Quando a inclinação desejada é alcançada, o poço é mantido tangente ou
+ reto até que o alvo seja alcançado.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Tipo 2 (
+\shape italic
+Build, hold and drop
+\shape default
+ ou S):
+\series default
+ na seção superior é semelhante ao tipo 1.
+ Após a seção tangente, a seção de perda de ângulo é perfurada e a trajetória
+ do poço até o alvo geológico é aproximadamente vertical.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Tipo 3 (
+\shape italic
+Continuous build
+\shape default
+):
+\series default
+ é um poço perfurado quando existe um obstáculo, por exemplo, um domo salino.
+ O poço é vertical até um KOP com uma profundidade mais acentuada.
+ A fase de 
+\shape italic
+buildup
+\shape default
+ termina sem um trecho de inclinação constante e então o alvo é alcançado.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../imagens/DirectionalDrillingWellTypes.png
+	scale 85
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tipos de poços direcionais mais comuns na perfuração de óleo e gás.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Uma vez fixado o modelo da trajetória, o projeto do poço direcional é apresentad
+o sob a forma de projeções do poço nos planos vertical e horizontal.
+ 
+\end_layout
+
+\begin_layout Standard
+Uma vez que o engenheiro de perfuração apenas poderá determinar a profundidade
+ vertical do poço, as seguintes informações também serão necessárias: 
+\end_layout
+
+\begin_layout Itemize
+Profundidade vertical do KOP (selecionados pelo engenheiro); 
+\end_layout
+
+\begin_layout Itemize
+BUR e seção de 
+\shape italic
+buildup
+\shape default
+ (selecionados pelo engenheiro); 
+\end_layout
+
+\begin_layout Itemize
+Direção que poço será perfurado após o KOP em graus a partir do norte (definida
+ pela posição do alvo em relação a sonda); 
+\end_layout
+
+\begin_layout Itemize
+Profundidade vertical ao final do 
+\shape italic
+buildup
+\shape default
+ e o início da seção tangente; 
+\end_layout
+
+\begin_layout Itemize
+Profundidade vertical do alvo geológico.
+ 
+\end_layout
+
+\begin_layout Section
+Formulação matemática
+\end_layout
+
+\begin_layout Standard
+O desenvolvimento deste projeto de engenharia será restrito ao perfil de
+ poço tipo 1, também conhecido como perfil J.
+ 
+\end_layout
+
+\begin_layout Standard
+A escolha do sistema de coordenadas depende de diversos fatores incluindo
+ a localizalização do alvo geológico e da proximidade com outros poços.
+ As coordenadas do alvo e a profundidade são selecionadas pelo geologista.
+ O engenheiro de perfuração é responsável pela a escolha do KOP e do BUR.
+ 
+\end_layout
+
+\begin_layout Standard
+A Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Geometria-da-trajetória"
+
+\end_inset
+
+ mostra a trajetória de um perfil 
+\shape italic
+build-and-hold
+\shape default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Onde: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $TVD_{AB}$
+\end_inset
+
+: distância da superfície ao KOP, em metros; 
+\end_layout
+
+\begin_layout Standard
+B-D: distância do KOP ao objetivo, em metros; 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $D_{h}$
+\end_inset
+
+: deslocamento horizontal, em metros; 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $TVD_{AG}$
+\end_inset
+
+:profundidade vertical, em metros; 
+\end_layout
+
+\begin_layout Standard
+MD (A-D): profundidade medida, em metros; 
+\end_layout
+
+\begin_layout Standard
+q: BUR, °/30 m.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../imagens/DirectionalDrillingWellTrajectory.png
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Geometria da trajetória tipo 1 com A) Dh > R, e B) Dh < R
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Geometria-da-trajetória"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para as equações seguintes, note que TVD3 = 
+\begin_inset Formula $TVD_{AG}$
+\end_inset
+
+, TVD2 = 
+\begin_inset Formula $TVD_{AC}$
+\end_inset
+
+, TVD1 = 
+\begin_inset Formula $TVD_{AB}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+A inclinação máxima, 
+\begin_inset Formula $\theta$
+\end_inset
+
+, considerado na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Geometria-da-trajetória"
+
+\end_inset
+
+ pode ser descrita por:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+90\textdegree=\theta+(90\textdegree-\Omega)+\tau\label{eq:}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\theta=\Omega-\tau\label{eq:-1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O ângulo 
+\begin_inset Formula $\tau$
+\end_inset
+
+ pode ser encontrado considerando o triângulo OPD, no caso ( 
+\begin_inset Formula $R>D_{h}$
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+tan(\tau)=\frac{DP}{PO}=\frac{R-D_{h}}{TVD3-TVD1}\label{eq:-2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+e assim,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\tau=arctan\left(\frac{R-D_{h}}{TVD3-TVD1}\right)\label{eq:-3}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O ângulo 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ pode ser encontrado considerando ODC, onde:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+sin(\Omega)=\frac{R}{OP}\label{eq:-4}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+e
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+L_{ob}=\sqrt{\left(R-D_{h}\right)^{2}+\left(TVD3-TVD1\right)^{2}}\label{eq:-5}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+substituindo OP na equação 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:-4"
+
+\end_inset
+
+ obtemos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+sin\left(\Omega\right)=\frac{R}{\sqrt{\left(R-D_{h}\right)^{2}+\left(TVD3-TVD1\right)^{2}}}\label{eq:-6}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O ângulo de inclinação máxima, 
+\begin_inset Formula $\theta$
+\end_inset
+
+, para o caso deste tipo de poço onde 
+\begin_inset Formula $\left(D_{h}<R\right)$
+\end_inset
+
+é:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\theta=arcsin\left[\frac{R}{\sqrt{\left[\left(R-D_{h}\right)^{2}+\left(TVD3-TVD1\right)^{2}\right]}}\right]-arctan\left(\frac{R-D_{h}}{TVD3-TVD1}\right)\label{eq:-7}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O comprimento do arco da seção BC é:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+L\left(BC\right)=\frac{\pi}{180\textdegree}*R*\theta\label{eq:-8}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ou
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+L\left(BC\right)=\frac{\theta}{q}\label{eq:-9}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O comprimento do caminho da trajetória, CD, a um ângulo de inclinação constante
+ pode ser determinado pelo triângulo DCO da seguinte maneira: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+tan\left(\Omega\right)=\frac{CO}{Lcb}=\frac{R}{Lcb}\label{eq:-10}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+e
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Lcb=\frac{R}{tan\left(\Omega\right)}\label{eq:-11}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A profundidade medida total, 
+\begin_inset Formula $D_{M}$
+\end_inset
+
+, para a profundidade vertical de TVD3 é:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+D_{M}=TVD1+\frac{\theta}{q}+\frac{R}{tan\left(\Omega\right)}\label{eq:-12}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+onde 
+\begin_inset Formula $D_{M}$
+\end_inset
+
+ é igual a seção vertical até o 
+\shape italic
+kickoff
+\shape default
+ mais a seção de 
+\shape italic
+build
+\shape default
+ mais a seção 
+\shape italic
+slant
+\shape default
+ (Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Geometria-da-trajetória"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+O afastamento horizontal GF 
+\begin_inset Formula $\left(D_{E}\right)$
+\end_inset
+
+ ao final do ganho de âgulo pode ser determinado considerando D'CO, onde:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+D_{E}=R-Rcos\left(\theta\right)=R\left(1-cos\left(\theta\right)\right)\label{eq:-13}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para encontrar a profundidade medida e o afastamento horizontal ao longo
+ de qualquer parte da seção de ganho antes de alcançar o ângulo máximo 
+\begin_inset Formula $\theta$
+\end_inset
+
+, basta considerar a inclinação intermediária 
+\begin_inset Formula $\theta'$
+\end_inset
+
+, o ângulo de inclinação em C', que fornecerá um novo afastamento horizontal,
+ 
+\begin_inset Formula $D_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Estas equações serão válidas apenas para o caso onde 
+\begin_inset Formula $\left(D_{h}<R\right)$
+\end_inset
+
+.
+ Uma outra maneira de expressar o ângulo máximo de inclinação, 
+\begin_inset Formula $\theta$
+\end_inset
+
+, em função de R, TVD1, TVD3, e 
+\begin_inset Formula $D_{h}$
+\end_inset
+
+ para 
+\begin_inset Formula $\left(D_{h}>R\right)$
+\end_inset
+
+ é:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline}
+\theta=arctan\left(\frac{TVD3-TVD1}{R-D_{h}}\right)-\\
+arccos\left[\left(\frac{R}{TVD3-TVD1}\right)*sin\left(arctan\left(\frac{TVD3-TVD1}{R-D_{h}}\right)\right)\right]\label{eq:-14}
+\end{multline}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Diagrama de pacotes – assuntos
+\end_layout
+
+\begin_layout Standard
+Apresentados os conceitos matemáticos relacionados ao desenvolvimento do
+ software, os assuntos identificados são descritos na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Diagrama-de-Pacotes"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../imagens/DiagramaPacotes.PNG
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de Pacotes
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Diagrama-de-Pacotes"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

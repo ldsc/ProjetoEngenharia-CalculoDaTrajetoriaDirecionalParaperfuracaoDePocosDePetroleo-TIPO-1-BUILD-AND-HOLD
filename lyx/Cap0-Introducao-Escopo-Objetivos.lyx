@@ -1,0 +1,471 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extbook
+\begin_preamble
+\usepackage {graphicx}
+\usepackage {longtable}
+\usepackage {indentfirst}
+\renewenvironment{center}{\par\centering}{\par}
+
+% Comentar linhas abaixo se não estiver usando pacote abntex
+% ou se o pacote ainda não foi instalado.
+% neste caso sugere-se usar citações no padrão apalike (lembra o da anbt).
+%\usepackage[alf ,abnt-etal-cite=2 , abnt-year-extra-label=yes , abnt-etal-list=0]{abntcite}
+%\usepackage {helvet}
+%\renewcommand {\familydefault}{\sfdefault}
+
+% Para uso de listagens de código
+\usepackage{color}
+\definecolor{azulclaro}{rgb}{0.6,1,1}%   rgb color model
+% Informa que vai usar o pacote listings, 
+% disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
+\usepackage{listings}
+\end_preamble
+\use_default_options false
+\master ../../ModeloDocumento-ProjetoEngenharia-ProgramacaoPratica-master/lyx/DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
+\maintain_unincluded_children false
+\language brazilian
+\language_package auto
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement h
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style apalike
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 210mm
+\paperheight 297mm
+\leftmargin 30mm
+\topmargin 25mm
+\rightmargin 20mm
+\bottommargin 20mm
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Capa
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+UNIVERSIDADE ESTADUAL DO NORTE FLUMINENSE
+\begin_inset Newline newline
+\end_inset
+
+LABORATÓRIO DE ENGENHARIA E EXPLORAÇÃO DE PETRÓLEO
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+O título deve ser o mais claro possível, não deixando dúvidas sobre o assunto
+ em questão.
+ O uso de vírgula ou dois pontos pode deixar o título com mais impacto.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+PROJETO ENGENHARIA
+\begin_inset Newline newline
+\end_inset
+
+DESENVOLVIMENTO DO SOFTWARE: 
+\begin_inset Newline newline
+\end_inset
+
+CÁLCULO DE TRAJETÓRIA DIRECIONAL PARA PERFURAÇÃO DE POÇOS DE PETRÓLEO: TIPO
+ 1 - 
+\shape italic
+BUILD AND HOLD
+\shape default
+
+\begin_inset Newline newline
+\end_inset
+
+TRABALHO DA DISCIPLINA PROGRAMAÇÃO PRÁTICA
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+ANTÔNIO JOSÉ DOS REIS NETO - Versão 1
+\begin_inset Newline newline
+\end_inset
+
+TATIANA VITÓRIO ISIDORIO - Versão 1
+\begin_inset Newline newline
+\end_inset
+
+Prof.
+ André Duarte Bueno
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5cm
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+o valor de 4cm pode ser alterado, para que a distribuição fique mais uniforme
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+MACAÉ - RJ
+\begin_inset Newline newline
+\end_inset
+
+JUNHO - 2017
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Introdução
+\begin_inset CommandInset label
+LatexCommand label
+name "cha:Introdução"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lhead{
+\backslash
+thechapter
+\backslash
+space - Introdução}
+\backslash
+pagenumbering{arabic}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lfoot{Antonio J.
+ e Tatiana Vitório} 
+\backslash
+rfoot{
+\backslash
+today}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Substitua "SeuNomeAqui" por seu nome e sobrenome
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+No presente projeto de engenharia desenvolve-se o software para cálculo
+ de trajetória direcional para perfuração de poços de petróleo, um software
+ aplicado a engenharia de petróleo e que utiliza o paradigma da orientação
+ a objetos.
+ 
+\end_layout
+
+\begin_layout Standard
+A importância deste trabalho está relacionada com a técnica de perfuração
+ direcional, que visa o desvio intencional do poço para atingir um ou mais
+ alvos prefixados.
+ O planejamento de um poço direcional é baseado em escolher, projetar e
+ executar a trajetória de um poço inclinado ou horizontal, bem como indicar
+ os parâmetros compatíveis com a trajetória escolhida.
+\end_layout
+
+\begin_layout Section
+Escopo do problema
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Escopo-do-Problema"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A perfuração de poços no Brasil tem se destacado ao longo dos anos por causa
+ dos inúmeros desafios que têm sido vencidos, notadamente no que se refere
+ à perfuração em águas profundas e ultra-profundas, como é o caso dos poços
+ do pré-sal.
+ Com o avanço das tecnologias utilizadas na perfuração, deu-se início aos
+ poços direcionais, que possibilitam o aumento na produtividade e, ao mesmo
+ tempo uma redução no impacto ambiental, quando por exemplo, se deseja atingir
+ formações produtoras que estejam abaixo de locações urbanas e/ou ambientalmente
+ sensíveis (lagos, rios, cidades, etc.).
+\end_layout
+
+\begin_layout Standard
+Poços de petróleo podem ser classificados, geometricamente, como poços verticais
+ e direcionais.
+ Estes ainda apresentam algumas variações: poços horizontais, de longo alcance
+ (
+\shape italic
+ERW - Extended Reach Well
+\shape default
+) ou multilateral.
+ Um adequado planejamento direcional pode ser a chave do sucesso de um poço,
+ principalmente para aqueles mais complicados como os poços com grande afastamen
+to (
+\shape italic
+ERW
+\shape default
+).
+ O planejamento envolve o estabelecimento da trajetória, análises técnicas
+ e pesquisas operacionais sobre as melhores práticas para a perfuração em
+ determinada região.
+ A trajetória direcional tem como objetivo atingir o alvo geológico definido
+ previamente pela equipe multidisciplinar formada por geólogos, geocientistas
+ e engenheiros de petróleo.
+\end_layout
+
+\begin_layout Standard
+O presente trabalho pretende simplificar, de forma eficiente, o cálculo
+ de uma trajetória vertical e direcional 2D, mantendo o azimute constante
+ ao longo da trajetória, e apresentar para o usuário a previsão da inclinação,
+ azimute e profundidade vertical (
+\shape italic
+TVD – True Vertical Depth
+\shape default
+) do projeto em desenvolvimento, em relação a profundidade medida (
+\shape italic
+MD – Measured Depth
+\shape default
+).
+ 
+\end_layout
+
+\begin_layout Section
+Objetivos
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Objetivos"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Os objetivos deste projeto de engenharia são:
+\end_layout
+
+\begin_layout Itemize
+Objetivo geral:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Desenvolver uma solução para o cálculo da trajetória em 2D de um projeto
+ de poço vertical e direcional.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Objetivos específicos:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Calcular a trajetória vertical do poço;
+\end_layout
+
+\begin_layout Itemize
+Calcular a trajetória direcional em 2D;
+\end_layout
+
+\begin_layout Itemize
+Calcular o afastamento, raio de curvatura e profundidade da seção vertical;
+\end_layout
+
+\begin_layout Itemize
+Simulação dos parâmetros operacionais compatíveis com o projeto requisitado;
+\end_layout
+
+\begin_layout Itemize
+Plotar os gráficos relacionandos a inclinação, azimute e profundidade vertical
+ em relação a profundidade medida;
+\end_layout
+
+\end_deeper
+\end_body
+\end_document

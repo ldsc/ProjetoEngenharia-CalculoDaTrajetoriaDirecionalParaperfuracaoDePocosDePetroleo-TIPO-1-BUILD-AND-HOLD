@@ -1,0 +1,113 @@
+% Encoding: UTF-8
+@String{LENEP  = {Laboratório de Engenharia e Exploração de Petróleo}}
+%--------------------------------------------------------------------
+% NAME: andre.bib (18/02/2002)
+%
+% O que é um arquivo BiBTeX?
+% É um arquivo em modo texto (tipo ASCII), que inclui referências completas para os
+% trabalhos (artigos/relatórios/teses/etc) a serem citados em sua monografia/dissertação/tese.
+%
+% Porque usar?
+% A vantagem de usar uma base de dados com as referencias bibliográficas
+% (como este arquivo), é que seu editor científico (ex: o LyX) 
+% poderá gerar as citações nos mais variados formatos acadêmicos.
+%
+% Como faço para usar?
+% No caso do LyX(2.0.2), você insere a base bibliográfica usando:
+% Lyx->Inserir->Listas e Indices->Bibliografia BiBTeX
+%
+% INSTRUÇÕES:
+% 0- Use o find (crtl-s ##)  para localizar as diferentes seções desta base de dados
+%    para próximo ítem basta digitar ctrl-s novamente (no emacs!).
+% 1-Use o emacs ou um editor simples para editar este arquivo
+%   Pode acentuar normalmente, usando çá,,; 
+
+% 2-Use o emacs (menu BIBTEX) para verificar a consistencia das entradas
+% Se tiver alguma inconsistência o emacs deve informar.
+
+% 3-Use o programa bibtool para gerar saída formatada.
+% ex: bibtool bibliografia
+
+% 4-Use as entradas normalmente no Lyx ou em outro editor tex.
+
+% 5-Se estiver no GNU/Linux, verifique se o arquivo .bib esta no formato do Unix. 
+% Use o programa dos2unix para converter arquivos do dos/windows para o GNU/Linux.
+% Use o programa unix2dos para converter arquivos do GNU/Linux para dos/windows.
+
+%   Para eliminar caracteris iso, e deixar somente ASCII, use o bibtool.
+%     bibtool -r iso2tex -i iso.bib -o ascii.bib
+
+%--------------------------------------------------------------------
+%--------------------------------------------------------------------
+% Para facilitar a localizacao, use o formato
+% adb    - artigos pessoais
+% imgan  - artigos de análise de imagem
+% pm     - artigos sobre meios porosos
+% rec    - artigos reconstrução
+% perc   - artigos percolação 
+% perm   - artigos permeabilidade
+% me     - artigos multi-escala
+% prob   - artigos probabilidade, processos estocásticos
+% microt - artigos micro tomografia
+% numan  - artigos sobre métodos numéricos
+% math   - artigos matemáticos
+% sl     - software livre
+% prog   - artigos/manuais programação
+% hst    - artigos histerese
+% prog-cpp
+% prog-HOWTO
+% prog-linux
+% prog-uml
+% prog-paralela
+% prog-xml
+% prog-interface
+%--------------------------------------------------------------------
+
+% Exemplos:
+%  author =       "W. W. Howells",
+%  author =       "G. B. Johnson and W. W. Howells and A. N. Other",
+%  author =       "Firstname Jones and Firstname Norman and Firstname Hazel and Firstname Robinson",
+%  author =       "sobrenome, nome",
+% Para preservar, isto é, manter um nome use {Nome}
+
+% Definição de strings
+@string{LMPT   = {Laboratório de Meios Porosos e Propriedades Termofísicas}}
+@String{UENF   = {Universidade Estadual do Norte Fluminense}}
+@String{UFSC   = {Universidade Federal de Santa Catarina}}
+
+@Article{rocha2006perfuraccao,
+  author  = {Rocha, Luiz Alberto Santos and Azuaga, Denise and Andrade, Renata and Vieira, Joao Luiz Bastos and Santos, Otto Luiz Alcantara},
+  title   = {Perfuracao direcional},
+  journal = {Rio de Janeiro: Editora Interci{\^e}ncia},
+  year    = {2006},
+}
+
+@Article{bourgoyne1986applied,
+  author    = {Bourgoyne, Adam T and Millheim, Keith K and Chenevert, Martin E and Young, Farrile S},
+  title     = {Applied drilling engineering},
+  year      = {1986},
+  publisher = {Society of Petroleum Engineers Richardson\^{} eTX TX},
+}
+
+@Book{thomas2001fundamentos,
+  author    = {Thomas, Jose Eduardo},
+  title     = {Fundamentos de engenharia de petroleo},
+  year      = {2001},
+  publisher = {Interciencia},
+}
+
+@Article{bueno2007programaccao,
+  author  = {Bueno, AD},
+  title   = {Programacao Orientada a Objeto com C++, 2{\textordfeminine} ed},
+  journal = {Novatec Editora Ltda},
+  year    = {2007},
+}
+
+@Article{omar2014directional,
+  author    = {Omar Farah, Farah and others},
+  title     = {Directional well design, trajectory and survey calculations, with a case study in Fiale, Asal Rift, Djibouti},
+  year      = {2014},
+  publisher = {United Nations University},
+}
+
+@Comment{jabref-meta: databaseType:biblatex;}

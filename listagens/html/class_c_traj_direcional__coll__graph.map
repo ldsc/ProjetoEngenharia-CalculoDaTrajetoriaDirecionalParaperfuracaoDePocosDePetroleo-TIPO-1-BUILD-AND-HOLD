@@ -1,0 +1,5 @@
+<map id="CTrajDirecional" name="CTrajDirecional">
+<area shape="rect" id="node2" href="$class_c_traj_direcional_slant.html" title="{CTrajDirecionalSlant\n|+ kop\l+ angMax\l+ comp_build\l+ md_total\l+ prof_eob\l+ tvd\l+ inc_slant\l+ tvd_vetor_slant\l+ inclination_slant\l+ md_vetor_slant\l|+ CTrajDirecionalSlant()\l+ MdSlant()\l+ IncSlant()\l+ TvdSlant()\l+ SaidaDadosSlant()\l}" alt="" coords="5,493,163,761"/>
+<area shape="rect" id="node3" href="$class_c_parametros_direcional.html" title="{CParametrosDirecional\n|+ kop\l+ bur\l+ tvd\l+ wellhead\l+ target\l+ r\l+ afast_alvo\l+ angMax\l+ prof_eob\l+ afast_eob\land 13 more...\l|+ TVDVertical()\l+ AZMVertical()\l+ MDVertical()\l+ INCVertical()\l+ RaioCurvatura()\l+ AfastamentoAlvo()\l+ AnguloMaximo()\l+ AfastamentoEob()\l+ ProfEob()\l+ CompSlant()\l+ CompBuild()\l+ MD()\l+ EntradaDadosDirecional()\l+ SaidaDadosDirecional()\l}" alt="" coords="132,6,313,421"/>
+<area shape="rect" id="node4" href="$class_c_traj_direcional_build_up.html" title="UTILIZAR OS PARÂMETROS DIRECIONAIS CALCULADOS NA CLASSE &quot;CPARAMETROSDIRECIONAL&quot;. " alt="" coords="293,485,467,768"/>
+</map>
